@@ -1,4 +1,5 @@
 {
+    "editor.inlineSuggest.enabled": false,
     "Lua.workspace.library": [
         "${addons}/love2d/module/library"
     ],
@@ -6,5 +7,5 @@
     "Lua.runtime.special": {
         "love.filesystem.load": "loadfile"
     },
-    "Lua.workspace.checkThirdParty": false
+    "Lua.workspace.checkThirdParty": false,
 }

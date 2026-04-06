@@ -1,9 +1,11 @@
 -- Force terminal output for WSL
 io.stdout:setvbuf("no")
 
--- Libraries
+-- Modules
 local push = require "push"
 local moonshine = require "moonshine"
+local loader = require "assets.lua.loader"
+local drawHandler = require "assets.lua.draw"
 
 -- Ressulution
 local VIRTUAL_WIDTH = 1280
@@ -17,6 +19,7 @@ local WINDOW_HEIGHT = 720
 local effect
 
 function love.load()
+    loader.LoadModules() -- Loads all lua scripts
     love.graphics.setDefaultFilter('linear', 'linear')
     
     -- Initialize Push
@@ -43,9 +46,7 @@ function love.draw()
 
     -- Apply shaders and draw everything
     effect(function()
-        love.graphics.clear(0.1, 0.1, 0.2) -- Dark blue background
-        love.graphics.rectangle("fill", 10, 10, 50, 50)
-        love.graphics.print("Scaling is now handled!", 70, 10)
+        drawHandler.SendDrawEvents()
     end)
 
     push:finish()

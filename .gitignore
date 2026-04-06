@@ -1,0 +1,20 @@
+# --- LÖVE ---
+# Ignore the final game builds
+*.love
+dist/
+bin/
+
+# --- VS Code ---
+# We keep settings.json so your LÖVE IntelliSense stays fixed!
+.vscode/*
+!.vscode/settings.json
+
+# --- OS Junk ---
+.DS_Store
+Thumbs.db
+
+# --- Python (if you made a venv) ---
+venv/
+.venv/
+__pycache__/
+*.py[cod]

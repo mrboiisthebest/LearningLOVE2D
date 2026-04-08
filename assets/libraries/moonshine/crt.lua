@@ -1,4 +1,4 @@
-local crtEffect = require "moonshine.effects.crt"
+local crtEffect = require "assets.libraries.moonshine.effects.crt"
 
 return function(moonshine)
     local effect = crtEffect(moonshine)

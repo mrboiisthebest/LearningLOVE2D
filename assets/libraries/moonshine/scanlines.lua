@@ -1,4 +1,4 @@
-local scanlinesEffect = require "moonshine.effects.scanlines"
+local scanlinesEffect = require "assets.libraries.moonshine.effects.scanlines"
 
 return function(moonshine)
     local effect = scanlinesEffect(moonshine)

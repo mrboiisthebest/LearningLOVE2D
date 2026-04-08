@@ -1,4 +1,4 @@
-local vignetteEffect = require "moonshine.effects.vignette"
+local vignetteEffect = require "assets.libraries.moonshine.effects.vignette"
 
 return function(moonshine)
     local effect = vignetteEffect(moonshine)

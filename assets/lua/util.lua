@@ -1,6 +1,5 @@
 local Util = {}
 
-
 function Util.FindInTable(table, target)
     for i, v in ipairs(table) do
         if v == target then

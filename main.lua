@@ -3,9 +3,13 @@ io.stdout:setvbuf("no")
 
 -- Modules
 local push = require "push"
-local moonshine = require "moonshine"
+local moonshine = require "assets.libraries.moonshine"
+local bump = require "assets.libraries.bump.bump"
+
 local loader = require "assets.lua.loader"
 local drawHandler = require "assets.lua.draw"
+local inputHandler = require "assets.lua.input"
+local uiHandler = require "assets.lua.ui"
 
 -- Ressulution
 local VIRTUAL_WIDTH = 1280
@@ -15,11 +19,15 @@ local VIRTUAL_HEIGHT = 720
 local WINDOW_WIDTH = 1280
 local WINDOW_HEIGHT = 720
 
+-- Globals
+world = bump.newWorld(50)
+
 -- Effect chain (will be initialized in love.load)
 local effect
 
 function love.load()
-    loader.LoadModules() -- Loads all lua scripts
+    loader.LoadUi("assets/ui")
+    loader.LoadModules("assets/lua")
     love.graphics.setDefaultFilter('linear', 'linear')
     
     -- Initialize Push
@@ -50,4 +58,16 @@ function love.draw()
     end)
 
     push:finish()
+end
+
+function love.update(dt)
+    
+end
+
+function love.keypressed(key)
+    inputHandler.Keypressed(key)
+end
+
+function love.mousepressed(x, y, button)
+    inputHandler.MousePressed(x, y, button)
 end

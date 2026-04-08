@@ -4,10 +4,6 @@ local Util = require "assets.lua.util"
 local DrawHandler = {}
 DrawHandler.active = {}
 
-function DrawHandler.Init()
-    print("Loaded Draw Handler")
-end
-
 
 function DrawHandler.AddToDraw(moduleName)
     if not  Util.Contains(DrawHandler.active, moduleName) then
@@ -15,7 +11,6 @@ function DrawHandler.AddToDraw(moduleName)
     end
 end
 
--- Gets triggerd Constantly!!!
 function DrawHandler.SendDrawEvents()
         for i, filename in ipairs(DrawHandler.active) do
         if  filename:match("%.lua$") then
@@ -26,6 +21,7 @@ function DrawHandler.SendDrawEvents()
             end
         end
     end
+    
 end
 
 return DrawHandler

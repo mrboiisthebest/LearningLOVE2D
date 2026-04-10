@@ -9,7 +9,7 @@ local bump = require "assets.libraries.bump.bump"
 local loader = require "assets.lua.loader"
 local drawHandler = require "assets.lua.draw"
 local inputHandler = require "assets.lua.input"
-local uiHandler = require "assets.lua.ui"
+local coin = require "assets.lua.coin"
 
 -- Ressulution
 local VIRTUAL_WIDTH = 1280
@@ -21,13 +21,16 @@ local WINDOW_HEIGHT = 720
 
 -- Globals
 world = bump.newWorld(50)
+VERSION = "0.0.4"
+
+
 
 -- Effect chain (will be initialized in love.load)
 local effect
 
 function love.load()
     loader.LoadUi("assets/ui")
-    loader.LoadModules("assets/lua")
+    loader.LoadModules()
     love.graphics.setDefaultFilter('linear', 'linear')
     
     -- Initialize Push
@@ -61,7 +64,7 @@ function love.draw()
 end
 
 function love.update(dt)
-    
+   
 end
 
 function love.keypressed(key)

@@ -10,7 +10,6 @@ function Input.MousePressed(x, y, button) -- 1 = left click 2 = right click
         local items, len = world:queryPoint(x, y)
         if len > 0 then
             local clickedElement = items[1]
-            print("Clicked:", clickedElement.name)
             
             -- Call onClick callback if it exists
             if clickedElement.onClick then

@@ -2,7 +2,7 @@
 io.stdout:setvbuf("no")
 
 -- Modules
-local push = require "push"
+local push = require "assets.libraries.push"
 local moonshine = require "assets.libraries.moonshine"
 local bump = require "assets.libraries.bump.bump"
 local flux = require "assets.libraries.flux.flux"
@@ -23,7 +23,7 @@ local WINDOW_HEIGHT = 720
 
 -- Globals
 world = bump.newWorld(50)
-VERSION = "0.0.4"
+VERSION = "0.0.6"
 
 
 

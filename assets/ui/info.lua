@@ -22,7 +22,7 @@ local text3 = {
 }
 
 uiHandler.addUiobject({
-    x = 100,
+    x = -100, -- makes rectangle invisable
     y = 50,
     w = 100,
     h = 100,

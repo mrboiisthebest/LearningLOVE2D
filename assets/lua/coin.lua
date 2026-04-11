@@ -61,12 +61,18 @@ function coin:Flip()
 
     local element = uiHandler.Find("Coin")
     if element then
-        -- Smooth up movement
-        flux.to(element, (Flip_Duration / 2), {y = element.y - 100})
+        -- Smooth up movement + spin
+        flux.to(element, (Flip_Duration / 2), {
+            y = element.y - 100,
+            rotation = element.rotation + (math.pi * 2 * 1)  
+        })
             :ease("quadout")
             :oncomplete(function()
-                -- Smooth down movement
-                flux.to(element, (Flip_Duration / 2), {y = element.y + 100})
+                -- Smooth down movement + more spin
+                flux.to(element, (Flip_Duration / 2), {
+                    y = element.y + 100,
+                    rotation = element.rotation + (math.pi * 2 * 1) 
+                })
                     :ease("quadin")
             end)
     end

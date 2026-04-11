@@ -6,13 +6,13 @@ end
 
 local text1 = {
     text = "FLIP COIN",
-    x = 400,
-    y = 100,
+    x = 1000,
+    y = 600,
 }
 
 uiHandler.addUiobject({
-    x = 400,
-    y = 100,
+    x = 1000,
+    y = 600,
     w = 100,
     h = 50,
     name = "PlayButton",

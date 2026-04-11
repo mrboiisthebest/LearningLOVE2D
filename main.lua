@@ -5,10 +5,12 @@ io.stdout:setvbuf("no")
 local push = require "push"
 local moonshine = require "assets.libraries.moonshine"
 local bump = require "assets.libraries.bump.bump"
+local flux = require "assets.libraries.flux.flux"
 
 local loader = require "assets.lua.loader"
 local drawHandler = require "assets.lua.draw"
 local inputHandler = require "assets.lua.input"
+local uiHandler = require "assets.lua.ui"
 local coin = require "assets.lua.coin"
 
 -- Ressulution
@@ -64,8 +66,11 @@ function love.draw()
 end
 
 function love.update(dt)
-   
+
+   flux.update(dt)
+   coin.Update(dt)
 end
+
 
 function love.keypressed(key)
     inputHandler.Keypressed(key)

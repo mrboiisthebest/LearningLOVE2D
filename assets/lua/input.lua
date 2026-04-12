@@ -18,7 +18,6 @@ function Input.MousePressed(x, y, button)
         local items, len = world:queryPoint(virtualX, virtualY)
         if len > 0 then
             local clickedElement = items[1]
-            print(clickedElement.name)
             if clickedElement.onClick then
                 clickedElement.onClick(clickedElement)
             end

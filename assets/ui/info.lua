@@ -21,6 +21,7 @@ local text3 = {
     y = pinnedY + (offset * 2),
 }
 
+
 uiHandler.addUiobject({
     x = -100, -- makes rectangle invisable
     y = 50,

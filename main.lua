@@ -12,6 +12,7 @@ local drawHandler = require "assets.lua.draw"
 local inputHandler = require "assets.lua.input"
 local uiHandler = require "assets.lua.ui"
 local coin = require "assets.lua.coin"
+local data = require "assets.lua.data"
 
 -- Ressulution
 local VIRTUAL_WIDTH = 1280
@@ -24,7 +25,7 @@ local WINDOW_HEIGHT = 720
 -- Globals
 world = bump.newWorld(50)
 VERSION = "0.0.6"
-
+PLAYER_DATA = data.Setup()
 
 
 -- Effect chain (will be initialized in love.load)

@@ -1,6 +1,6 @@
 local uiHandler = require "assets.lua.ui"
 local flux = require "assets.libraries.flux.flux"
-
+local data = require "assets.lua.data"
 
 local Flip_Duration = 1 -- seconds
 
@@ -51,6 +51,14 @@ function coin.Update(dt)
     end
 end
 
+local function increaseStreak(isHeads)
+    if isHeads then
+        data.UpdateValue("Streak", PLAYER_DATA.Streak + 1)
+    else
+        data.UpdateValue("Streak", 0)
+    end
+end
+
 function coin:Flip()
     local rolled = math.random(0, 100)
     local Heads = rolled <= self.Chance
@@ -74,6 +82,9 @@ function coin:Flip()
                     rotation = element.rotation + (math.pi * 2 * 1) 
                 })
                     :ease("quadin")
+                    :oncomplete(function ()
+                        increaseStreak(Heads)
+                    end)
             end)
     end
     self.flipCooldown = Flip_Duration + 0.05

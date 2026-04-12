@@ -46,8 +46,9 @@ function love.load()
 
     -- Create effect chain using standard moonshine API
     effect = moonshine(moonshine.effects.crt)
-                      .chain(moonshine.effects.vignette)
-                        .chain(moonshine.effects.scanlines)
+                    .chain(moonshine.effects.vignette)
+                    .chain(moonshine.effects.scanlines)
+                    .chain(moonshine.effects.pixelate)
 end
 
 -- Window resizing automatically

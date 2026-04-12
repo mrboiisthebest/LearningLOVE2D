@@ -42,7 +42,11 @@ function uiHandler.Draw()
             love.graphics.rectangle("fill", -ox, -oy, element.w, element.h)
             love.graphics.pop()
         else
-            love.graphics.draw(element.sprite, element.x + ox, element.y + oy, rotation, 1, 1, ox, oy)
+            local scaleX = element.w / element.sprite:getWidth()
+            local scaleY = element.h / element.sprite:getHeight()
+            local imageOx = element.sprite:getWidth() / 2
+            local imageOy = element.sprite:getHeight() / 2
+            love.graphics.draw(element.sprite, element.x + ox, element.y + oy, rotation, scaleX, scaleY, imageOx, imageOy)
         end
         if element.texts then
             love.graphics.setColor(1, 1, 1)

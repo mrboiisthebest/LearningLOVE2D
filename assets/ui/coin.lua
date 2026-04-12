@@ -6,4 +6,5 @@ uiHandler.addUiobject({
     w = 100,
     h = 35,
     name = "Coin",
+    sprite = love.graphics.newImage("assets/images/coin.png")
 })

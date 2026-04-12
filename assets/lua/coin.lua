@@ -13,7 +13,6 @@ local __index = coin
 function coin.Init()
     CURRENT_COIN = coin.Create({
     Value = 0.25,
-    Sprite = nil,
     Multi = 1,
     Chance = 50,
     UiElement = uiHandler.Find("Coin"),

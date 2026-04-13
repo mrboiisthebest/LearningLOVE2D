@@ -2,6 +2,7 @@ local uiHandler = require "assets.lua.ui"
 local flux = require "assets.libraries.flux.flux"
 local data = require "assets.lua.data"
 
+local Flip_Height = 250
 local Flip_Duration = 1 -- seconds
 
 
@@ -70,14 +71,14 @@ function coin:Flip()
     if element then
         -- Smooth up movement + spin
         flux.to(element, (Flip_Duration / 2), {
-            y = element.y - 100,
+            y = element.y - Flip_Height,
             rotation = element.rotation + (math.pi * 2 * 1)  
         })
             :ease("quadout")
             :oncomplete(function()
                 -- Smooth down movement + more spin
                 flux.to(element, (Flip_Duration / 2), {
-                    y = element.y + 100,
+                    y = element.y + Flip_Height,
                     rotation = element.rotation + (math.pi * 2 * 1) 
                 })
                     :ease("quadin")

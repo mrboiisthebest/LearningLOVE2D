@@ -24,7 +24,7 @@ local WINDOW_HEIGHT = 720
 
 -- Globals
 world = bump.newWorld(50)
-VERSION = "0.0.6"
+VERSION = "0.0.8"
 PLAYER_DATA = data.Setup()
 
 

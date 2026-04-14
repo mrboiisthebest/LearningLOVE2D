@@ -24,7 +24,7 @@ local WINDOW_HEIGHT = 720
 
 -- Globals
 world = bump.newWorld(50)
-VERSION = "0.0.9"
+VERSION = "0.0.10"
 PLAYER_DATA = data.Setup()
 
 
@@ -34,6 +34,8 @@ local effect
 function love.load()
     loader.LoadUi("assets/ui")
     loader.LoadModules()
+    drawHandler.CacheModules()
+
     love.graphics.setDefaultFilter('linear', 'linear')
     
     -- Initialize Push

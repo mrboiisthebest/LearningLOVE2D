@@ -2,6 +2,7 @@ local drawHandler = require "assets.lua.draw"
 
 local uiHandler = {}
 uiHandler.Elements = {}
+uiHandler.ElementsByName = {}
 
 function uiHandler.Init()
     drawHandler.AddToDraw("ui.lua")
@@ -24,16 +25,17 @@ function uiHandler.addUiobject(config)
     world:add(element, element.x, element.y, element.w, element.h)
 
     table.insert(uiHandler.Elements, element)
+    uiHandler.ElementsByName[config.name] = element
 
     return element
 end
 
 function uiHandler.Draw()
-    for _, element in ipairs(uiHandler.Elements) do
+    for i, element in ipairs(uiHandler.Elements) do
         local rotation = element.rotation or 0
         local ox = element.w / 2
         local oy = element.h / 2
-        
+
         if element.sprite == nil then
             love.graphics.setColor(0.2, 0.2, 0.8)
             love.graphics.push()
@@ -60,12 +62,7 @@ end
 
 
 function uiHandler.Find(name)
-    for i, v in ipairs(uiHandler.Elements) do
-        if v.name == name then
-            return uiHandler.Elements[i]
-        end
-
-    end
+    return uiHandler.ElementsByName[name]
 end
 
 function uiHandler.Rotate(name, degree)

@@ -17,7 +17,7 @@ function love.conf(t)
     t.window.minheight = 600
     t.window.vsync = 1                -- 1 = On, 0 = Off. Keeps movement smooth
     t.window.highdpi = true
-    t.window.msaa = 2 -- This makes rotated objects look MUCH smoother
+    t.window.msaa = 0 -- This makes rotated objects look MUCH smoother
 
     -- Unused Modules of Love2d
     t.modules.physics = false         -- Only enable if using love.physics

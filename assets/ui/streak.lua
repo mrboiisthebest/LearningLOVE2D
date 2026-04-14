@@ -4,7 +4,7 @@ local uiHandler = require "assets.lua.ui"
 local text1 = {
     text = PLAYER_DATA.Streak,
     x = 800,
-    y = 650
+    y = 650,
 }
 
 uiHandler.addUiobject({

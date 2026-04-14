@@ -1,5 +1,8 @@
 local drawHandler = require "assets.lua.draw"
 
+local defaultFont = love.graphics.newFont(12)
+
+
 local uiHandler = {}
 uiHandler.Elements = {}
 uiHandler.ElementsByName = {}
@@ -53,7 +56,12 @@ function uiHandler.Draw()
         if element.texts then
             love.graphics.setColor(1, 1, 1)
             for i, v in ipairs(element.texts) do
+                
+                if v.size then
+                    love.graphics.setFont(love.graphics.newFont(v.size))
+                end
                 love.graphics.print(v.text, v.x, v.y)
+                love.graphics.setFont(defaultFont)
             end
         end
     end
